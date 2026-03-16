@@ -1,14 +1,15 @@
 Metadata-Version: 2.4
 Name: batch-bg-remover
-Version: 0.3.0
-Summary: 대량 이미지 배경 제거 유틸리티 (GUI 지원)
-Requires-Python: >=3.9
+Version: 0.1.0
+Summary: AI 대량 이미지 배경 제거기
+Requires-Python: >=3.10
 Description-Content-Type: text/markdown
-Requires-Dist: rembg[cli]>=2.0.0
-Requires-Dist: onnxruntime>=1.14.0
-Requires-Dist: Pillow>=9.0.0
-Requires-Dist: tqdm>=4.65.0
+Requires-Dist: rembg>=2.0.50
+Requires-Dist: pillow>=10.0.0
 Requires-Dist: tkinterdnd2>=0.3.0
+Requires-Dist: supabase>=2.3.4
+Requires-Dist: requests>=2.31.0
+Requires-Dist: httpx>=0.26.0
 
 프로젝트명: 대량 이미지 배경 제거기 (Batch Background Remover)
 
