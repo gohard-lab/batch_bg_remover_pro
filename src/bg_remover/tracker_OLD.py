@@ -11,7 +11,7 @@ def get_supabase_client() -> Client:
         # 데스크톱(.exe) 배포용이므로 API 키를 직접 명시합니다. (RLS 정책으로 보안 유지)
         supabase_url = "https://gkzbiacodysnrzbpvavm.supabase.co"
         # 주의: 아래 키는 반드시 'eyJ...' 로 시작하는 긴 anon 키여야 합니다!
-        supabase_key = "여기에_사용자님의_진짜_긴_anon_key를_넣어주세요" 
+        supabase_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdremJpYWNvZHlzbnJ6YnB2YXZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM1NzE2MTgsImV4cCI6MjA4OTE0NzYxOH0.Lv5uVeNZOyo21tgyl2jjGcESoLl_iQTJYp4jdCwuYDU"
         
         _supabase_client = create_client(supabase_url, supabase_key)
     return _supabase_client
@@ -21,11 +21,12 @@ supabase = get_supabase_client()
 def get_location_data():
     """사용자의 IP를 기반으로 익명화된 위치 정보를 가져옵니다."""
     try:
-        response = requests.get('http://ip-api.com/json/?fields=status,country,city,lat,lon', timeout=3)
+        response = requests.get('http://ip-api.com/json/?fields=status,country,regionName,city,lat,lon', timeout=3)
         data = response.json()
         if data['status'] == 'success':
             return {
                 'country': data['country'],
+                'region': data['regionName'],
                 'city': data['city'],
                 'lat': data['lat'],
                 'lon': data['lon']
@@ -46,11 +47,12 @@ def log_app_usage(app_name: str, action: str, details: dict = None):
         if location:
             log_data.update({
                 'country': location['country'],
+                'region': location['region'],
                 'city': location['city'],
                 'lat': location['lat'],
                 'lon': location['lon']
             })
         supabase.table('usage_logs').insert(log_data).execute()
     except Exception as e:
-        # 인터넷 연결 없음 등의 에러가 발생해도 본 프로그램(누끼따기)은 정상 작동해야 합니다.
-        pass
+        # 사용자 경험을 위해 에러는 출력만 하고 프로그램은 계속 진행시킵니다.
+        print(f"로그 기록 실패: {e}")

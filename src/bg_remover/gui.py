@@ -10,7 +10,7 @@ from tkinterdnd2 import TkinterDnD, DND_FILES
 
 from processor import process_images
 # 📡 우리가 만든 추적기 불러오기
-from tracker import log_app_usage 
+from tracker_exe import log_app_usage 
 
 if getattr(sys, 'frozen', False):
     BASE_DIR = Path(sys.executable).parent
@@ -33,7 +33,7 @@ class BgRemoverApp(TkinterDnD.Tk):
         self._build_ui()
         
         # 📡 [센서 1] 시청자가 프로그램을 켰을 때 기록 (방문자 수 측정)
-        log_app_usage("대량_누끼따기_프로그램", "app_opened")
+        log_app_usage("batch_bg_remover", "app_opened")
 
     def _build_ui(self):
         # (기존 UI 구성 코드와 100% 동일하므로 생략 없이 원본 코드를 그대로 둡니다)
@@ -79,8 +79,8 @@ class BgRemoverApp(TkinterDnD.Tk):
         self.status_var.set(f"{len(self.input_paths)}개의 항목이 선택되었습니다.")
         self.update_dropzone_ui(f"✅ {len(self.input_paths)}개의 항목이 인식되었습니다!")
         
-        # 📡 [센서 2] 시청자가 파일을 드래그해서 넣었을 때 기록
-        log_app_usage("대량_누끼따기_프로그램", "files_dropped_in_ui")
+        # 📡 [수정] 드래그 앤 드롭 방식임을 명시하고 파일 개수를 details에 담음
+        log_app_usage("batch_bg_remover", "input_received", {"method": "drag_and_drop", "item_count": len(self.input_paths)})
 
     def select_input_folder(self):
         folder = filedialog.askdirectory(title="입력 폴더 선택")
@@ -90,8 +90,8 @@ class BgRemoverApp(TkinterDnD.Tk):
             self.status_var.set(f"선택된 폴더: {folder_name}")
             self.update_dropzone_ui(f"✅ '{folder_name}' 폴더가 인식되었습니다!")
             
-            # 📡 [센서 3] 시청자가 클릭해서 폴더를 선택했을 때 기록
-            log_app_usage("대량_누끼따기_프로그램", "folder_selected_in_ui")
+            # 📡 [수정] 폴더 선택 방식임을 명시
+            log_app_usage("batch_bg_remover", "input_received", {"method": "folder_select", "item_count": 1})
 
     def select_output_folder(self):
         folder = filedialog.askdirectory(title="출력(저장) 폴더 선택")
@@ -134,7 +134,7 @@ class BgRemoverApp(TkinterDnD.Tk):
             return
 
         # 📡 [센서 4] 작업 시작 버튼을 눌렀을 때 기록 (핵심 전환율 지표)
-        log_app_usage("대량_누끼따기_프로그램", "process_started")
+        log_app_usage("batch_bg_remover", "process_started")
 
         self.save_config()
         self.start_btn.config(state=tk.DISABLED)
@@ -158,7 +158,7 @@ class BgRemoverApp(TkinterDnD.Tk):
             messagebox.showinfo("완료", "작업이 성공적으로 끝났습니다.")
             
             # 📡 [센서 5] 누끼 따기 작업이 성공적으로 끝났을 때 기록
-            log_app_usage("대량_누끼따기_프로그램", "process_completed_successfully")
+            log_app_usage("batch_bg_remover", "process_completed_successfully")
         else:
             self.status_var.set("처리할 이미지를 찾지 못했습니다.")
             
