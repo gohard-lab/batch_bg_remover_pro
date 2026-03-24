@@ -31,7 +31,6 @@ If you want to run from the source code or build it yourself:
 # 1. Clone the repository
 git clone [https://github.com/gohard-lab/batch_bg_remover.git](https://github.com/gohard-lab/batch_bg_remover.git)
 cd batch_bg_remover
-
 # 2. Install dependencies using uv (Fastest way)
 uv sync
 
@@ -40,6 +39,7 @@ uv run python src/main.py
 
 # 4. Build the EXE (Optional)
 uv run pyinstaller --noconsole --onefile --copy-metadata pymatting src/main.py
+```
 
 ## 📺 Video Tutorial
 Want to understand the code or see how this tool was built from scratch? Check out the full step-by-step developer guide on my YouTube channel.

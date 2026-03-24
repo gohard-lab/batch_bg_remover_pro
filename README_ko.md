@@ -41,6 +41,7 @@ uv run python src/main.py
 
 # 4. EXE 실행 파일 직접 빌드하기
 uv run pyinstaller --noconsole --onefile --copy-metadata pymatting src/main.py
+```
 
 * [**유튜브 영상 링크**]https://youtu.be/HzuSu2b_5N4
 
