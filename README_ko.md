@@ -1,4 +1,3 @@
-```markdown
 🌐 **다른 언어로 읽기:** [English](README.md) | [🇰🇷 한국어 (Korean)](README_ko.md)
 
 # AI 대량 이미지 배경 제거기 (누끼 프로그램)
