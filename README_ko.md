@@ -51,7 +51,9 @@ uv run pyinstaller --noconsole --onefile --copy-metadata pymatting src/main.py
 * [**유튜브 영상 링크**] (https://youtu.be/HzuSu2b_5N4)
 
 📊 데이터 수집 안내
+
 ※ 본 프로그램은 더 나은 서비스 제공과 에러 수정을 위해 익명화된 최소한의 사용 통계(기능 클릭 수 등)를 수집합니다. (개인 식별 정보는 일절 수집하지 않습니다.)
 
 📺 관련 영상 가이드
+
 이 프로그램의 작동 원리와 개발 과정이 궁금하시다면 유튜브 '잡학다식 개발자' 채널의 가이드 영상을 참고해 주세요.
