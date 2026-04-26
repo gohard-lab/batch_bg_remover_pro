@@ -40,4 +40,4 @@ Did this tool save your valuable time? Instead of being a 'cherry picker' who ju
 ## 🔗 Links
 YouTube Channel: [PolymathDev](https://www.youtube.com/@PolymathDev_KR)
 
-Developer GitHub: [gohard-lab](https://www.google.com/search?q=https://github.com/gohard-lab)
+Developer GitHub: [gohard-lab](https://github.com/gohard-lab)

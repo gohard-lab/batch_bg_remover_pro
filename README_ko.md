@@ -14,12 +14,6 @@
 * **⚠️ 스마트 에러 관리**: 배경 제거가 불완전하거나 실패한 파일은 자동으로 `_review_needed` 폴더로 격리하여 수동 검토를 돕습니다.
 * **📊 작업 통계 리포트**: 작업 시간, 성공 여부, 하드웨어 효율 등을 담은 `process_stats.csv` 파일을 생성합니다.
 
-### [ENG] Key Features
-* **📂 Mirror Folder Structure**: Preserves your original directory hierarchy in the output folder.
-* **🎨 Custom Canvas & Background**: Supports custom background colors (HEX) and fixed canvas dimensions (e.g., 1000x1000).
-* **⚠️ Smart Error Isolation**: Automatically moves "uncertain" or failed files to the `_review_needed` folder for manual review.
-* **📊 Performance Logging**: Generates a `process_stats.csv` to track processing time and hardware efficiency per batch.
-
 ---
 
 ## 🚀 Quick Start
@@ -46,4 +40,4 @@ uv run main.py
 ## 🔗 Links
 YouTube Channel: [잡학다식 개발자 PolymathDev](https://www.youtube.com/@PolymathDev_KR)
 
-Developer GitHub: [gohard-lab](https://www.google.com/search?q=https://github.com/gohard-lab)
+Developer GitHub: [gohard-lab](https://github.com/gohard-lab)
