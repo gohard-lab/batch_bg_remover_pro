@@ -1,59 +1,49 @@
-🌐 **다른 언어로 읽기:** [English](README.md) | [🇰🇷 한국어 (Korean)](README_ko.md)
+# 📸 Batch BG Remover Pro (Workflow Edition)
 
-# AI 대량 이미지 배경 제거기 (누끼 프로그램)
+[![GitHub stars](https://img.shields.io/github/stars/gohard-lab/batch_bg_remover_pro?style=social)](https://github.com/gohard-lab/batch_bg_remover_pro)
 
-API 결제나 구독 없이 평생 무료로 사용할 수 있는 오프라인 AI 배경 제거 프로그램입니다. 파이썬으로 제작되었으며, 인터넷 연결 없이도 PC 내부 자원만으로 빠르고 정교하게 배경을 지워줍니다.
+**AI 기반 대량 배경 제거 도구의 결정판.** 이 프로젝트는 글로벌 커뮤니티의 실제 사용자 피드백을 바탕으로, 단순한 AI 기능을 넘어 실제 업무 현장(이커머스, 사진 촬영 등)의 워크플로우 효율을 극대화하기 위해 제작되었습니다.
 
-## 🚀 주요 기능
-* **100% 무료 및 오프라인:** 비싼 API 키가 필요 없습니다.
-* **대량 일괄 변환 (Batch):** 사진 한 장은 물론, 수백 장이 들어있는 폴더 전체를 한 번에 변환합니다.
-* **강력한 AI 성능:** U2Net 모델 기반의 `rembg` 라이브러리를 사용하여 머리카락 수준의 정교한 경계선을 추출합니다.
-* **직관적인 UI:** 드래그 앤 드롭을 지원하는 깔끔한 그래픽 인터페이스(GUI).
-* **설치 불필요 (Standalone):** 파이썬을 모르는 일반인도 바로 쓸 수 있는 단일 `.exe` 실행 파일을 제공합니다.
+---
 
-## 🛠️ 사용된 기술
-* **언어:** Python 3.10+
-* **AI 엔진:** `rembg`
-* **GUI 구현:** `Tkinter` / `tkinterdnd2`
-* **패키지 관리:** `uv`
-* **실행 파일 빌드:** `PyInstaller`
+## ✨ Key Features (V2.0 Update)
 
-## 📦 다운로드 및 사용법 (일반 사용자용)
-코딩을 몰라도 바로 사용할 수 있습니다.
-1. [Releases](../../releases) 페이지로 이동합니다.
-2. 가장 최신 버전의 `BgRemover.exe` 파일을 다운로드합니다.
-3. 더블 클릭하여 실행한 뒤, 원하는 사진이나 폴더를 끌어다 놓으세요.
+### [KOR] 주요 기능
+* **📂 폴더 구조 미러링**: 원본 폴더의 계층 구조를 결과물 폴더에 그대로 복제하여 파일 정리 시간을 획기적으로 줄여줍니다.
+* **🎨 커스텀 캔버스 및 배경색**: 투명 배경뿐만 아니라 화이트, 블랙 등 원하는 배경색(#HEX)과 특정 캔버스 크기(예: 1000x1000)를 지정할 수 있습니다.
+* **⚠️ 스마트 에러 관리**: 배경 제거가 불완전하거나 실패한 파일은 자동으로 `_review_needed` 폴더로 격리하여 수동 검토를 돕습니다.
+* **📊 작업 통계 리포트**: 작업 시간, 성공 여부, 하드웨어 효율 등을 담은 `process_stats.csv` 파일을 생성합니다.
 
-## 💻 개발자용 실행 가이드
-직접 소스 코드를 실행하거나 수정하고 싶으신 분들을 위한 가이드입니다.
+### [ENG] Key Features
+* **📂 Mirror Folder Structure**: Preserves your original directory hierarchy in the output folder.
+* **🎨 Custom Canvas & Background**: Supports custom background colors (HEX) and fixed canvas dimensions (e.g., 1000x1000).
+* **⚠️ Smart Error Isolation**: Automatically moves "uncertain" or failed files to the `_review_needed` folder for manual review.
+* **📊 Performance Logging**: Generates a `process_stats.csv` to track processing time and hardware efficiency per batch.
 
-### 1. 저장소 클론
+---
+
+## 🚀 Quick Start
+
+본 프로젝트는 최신 파이썬 생태계의 표준인 **`uv`**를 사용하여 의존성을 관리합니다.
+
 ```bash
-git clone [https://github.com/gohard-lab/batch_bg_remover.git](https://github.com/gohard-lab/batch_bg_remover.git)
-cd batch_bg_remover
-```
+# Repository 클론
+git clone [https://github.com/gohard-lab/batch_bg_remover_pro.git](https://github.com/gohard-lab/batch_bg_remover_pro.git)
+cd batch_bg_remover_pro
 
-### 2. 패키지 설치 (가장 빠른 uv 사용 권장)
-```bash
+# 의존성 설치 및 실행
 uv sync
+uv run main.py
 ```
 
-### 3. 프로그램 실행
-```bash
-uv run python src/main.py
-```
-### 4. EXE 실행 파일 직접 빌드하기
-```bash
-uv run pyinstaller --noconsole --onefile --copy-metadata pymatting src/main.py
-```
+## ⭐ Support the Project
+개발자를 응원해 주세요
+이 프로그램이 여러분의 소중한 퇴근 시간을 앞당겨 주었나요? 소스코드만 조용히 가져가는 '체리피커'가 되기보다, 개발자의 땀과 노력에 대한 최소한의 예의로 GitHub Star⭐ 한 번만 눌러주세요. 여러분의 양심적인 클릭 한 번이 더 나은 무료 도구를 지속적으로 만드는 힘이 됩니다.
 
-## 📺 Video Tutorial
-* [**유튜브 영상 링크**] (https://youtu.be/HzuSu2b_5N4)
+## 📝 Notice
+※ 본 프로그램은 더 나은 서비스 제공과 에러 수정을 위해 익명화된 최소한의 사용 통계(기능 클릭 수 등)를 수집합니다. 개인 식별 정보는 일절 수집하지 않으니 안심하고 사용하셔도 됩니다.
 
-📊 데이터 수집 안내
+## 🔗 Links
+YouTube Channel: [잡학다식 개발자 PolymathDev](https://www.youtube.com/@PolymathDev_KR)
 
-※ 본 프로그램은 더 나은 서비스 제공과 에러 수정을 위해 익명화된 최소한의 사용 통계(기능 클릭 수 등)를 수집합니다. (개인 식별 정보는 일절 수집하지 않습니다.)
-
-📺 관련 영상 가이드
-
-이 프로그램의 작동 원리와 개발 과정이 궁금하시다면 유튜브 '잡학다식 개발자' 채널의 가이드 영상을 참고해 주세요.
+Developer GitHub: [gohard-lab](https://www.google.com/search?q=https://github.com/gohard-lab)

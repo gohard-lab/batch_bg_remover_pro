@@ -1,0 +1,81 @@
+1
+00:00:00,000 --> 00:00:04,480
+A few days ago, I shared a simple background remover tool on Reddit.
+
+2
+00:00:04,480 --> 00:00:08,000
+While many liked the simplicity, one user, Adventurous,
+
+3
+00:00:08,000 --> 00:00:13,760
+date 9971, pointed out something crucial. In the real world, especially for e-commerce
+
+4
+00:00:13,760 --> 00:00:18,400
+sellers and photographers, it's not just about the AI model, it's about the workflow.
+
+5
+00:00:18,400 --> 00:00:23,520
+They mentioned that using tools like GIMP with PYAutoGUI was a nightmare.
+
+6
+00:00:23,520 --> 00:00:27,360
+So, I decided to fix the pain points they mentioned.
+
+7
+00:00:27,440 --> 00:00:33,040
+Today, I am updating the BG underscore remover with a focus on professional utility.
+
+8
+00:00:33,040 --> 00:00:36,799
+First, the tool now mirrors your entire folder structure.
+
+9
+00:00:36,799 --> 00:00:41,599
+If you drop a folder with 10 subdirectories, the output will look exactly the same,
+
+10
+00:00:41,599 --> 00:00:45,360
+preserving your organization. Second, I've ensured that original
+
+11
+00:00:45,360 --> 00:00:49,680
+file names are kept intact to avoid confusion in product management.
+
+12
+00:00:49,680 --> 00:00:55,200
+Third, I added a Review Needed feature. If the AI is unsure about a cutout,
+
+13
+00:00:55,200 --> 00:00:59,200
+it automatically moves that file to a separate folder for manual inspection,
+
+14
+00:00:59,200 --> 00:01:01,279
+saving you from hunting through hundreds of images.
+
+15
+00:01:01,840 --> 00:01:06,239
+Finally, as a developer who loves data, I've integrated a local log that tracks
+
+16
+00:01:06,239 --> 00:01:12,000
+processing time and hardware performance. This helps you see if switching to a dedicated GPU
+
+17
+00:01:12,000 --> 00:01:14,720
+actually makes a difference for your specific batch.
+
+18
+00:01:14,720 --> 00:01:18,000
+The updated source code is available on my GitHub.
+
+19
+00:01:18,000 --> 00:01:23,680
+If you find this workflow improvement helpful, please consider leaving a star on the repository.
+
+20
+00:01:23,680 --> 00:01:27,440
+Your conscientious support is what keeps this project evolving.
+
+

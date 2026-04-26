@@ -3,11 +3,11 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "batch-bg-remover"
+name = "batch-bg-remover-pro"
 version = "0.1.0"
 description = "AI 대량 이미지 배경 제거기"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
     "rembg>=2.0.50",
     "pillow>=10.0.0",
@@ -16,6 +16,8 @@ dependencies = [
     "requests>=2.31.0",
     "httpx>=0.26.0",
     "python-dotenv>=1.2.2",
+    "pyside6>=6.11.0",
+    "onnxruntime>=1.25.0",
 ]
 
 [project.scripts]
