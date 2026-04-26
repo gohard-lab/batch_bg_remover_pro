@@ -1,3 +1,5 @@
+🌐 **Read this in other languages:** [English](README.md) | [🇰🇷 한국어 (Korean)](README_ko.md)
+
 # 📸 Batch BG Remover Pro (Workflow Edition)
 
 [![GitHub stars](https://img.shields.io/github/stars/gohard-lab/batch_bg_remover_pro?style=social)](https://github.com/gohard-lab/batch_bg_remover_pro)
