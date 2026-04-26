@@ -23,7 +23,7 @@ This project uses **`uv`**, the modern standard for Python package management, t
 
 ```bash
 # Clone the repository
-git clone [https://github.com/gohard-lab/batch_bg_remover_pro.git](https://github.com/gohard-lab/batch_bg_remover_pro.git)
+git clone https://github.com/gohard-lab/batch_bg_remover_pro.git
 cd batch_bg_remover_pro
 
 # Install dependencies and run

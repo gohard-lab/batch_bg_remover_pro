@@ -22,7 +22,7 @@
 
 ```bash
 # Repository 클론
-git clone [https://github.com/gohard-lab/batch_bg_remover_pro.git](https://github.com/gohard-lab/batch_bg_remover_pro.git)
+git clone https://github.com/gohard-lab/batch_bg_remover_pro.git
 cd batch_bg_remover_pro
 
 # 의존성 설치 및 실행
